@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string | null;
+	/** Error pages: no canonical URL, not indexed. */
+	noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [
+	['Products', '/products/'],
+	['Used equipment', '/inventory/'],
+	['Projects', '/projects/'],
+	['Services', '/services/'],
+	['Blog', '/blog/'],
+	['About', '/about/'],
+	['Contact', '/contact/'],
+];
+const here = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
+		{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+		<meta property="og:title" content={title} />
+		{description && <meta property="og:description" content={description} />}
+		<meta property="og:type" content="website" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+	</head>
+	<body class="bg-paper text-ink font-sans antialiased">
+		<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-white">Skip to content</a>
+		<header class="bg-ink text-white">
+			<div class="mx-auto max-w-6xl px-4 py-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+				<a href="/" class="font-bold text-lg tracking-tight">Northline <span class="text-[#f0a060]">Industrial Supply</span></a>
+				<nav aria-label="Main" class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+					{nav.map(([label, href]) => (
+						<a href={href} class:list={['hover:underline', here.startsWith(href) && 'underline']} aria-current={here.startsWith(href) ? 'page' : undefined}>{label}</a>
+					))}
+				</nav>
+				<a href="/request-a-quote/" class="ml-auto rounded bg-accent px-4 py-2 text-sm font-semibold hover:brightness-110">Request a quote</a>
+			</div>
+		</header>
+		<main id="main" class="mx-auto max-w-6xl px-4 py-10">
+			<slot />
+		</main>
+		<footer class="bg-ink text-white/80 text-sm">
+			<div class="mx-auto max-w-6xl px-4 py-8 grid gap-4 sm:grid-cols-3">
+				<p>Northline Industrial Supply<br />4120 E Trent Ave, Spokane, WA</p>
+				<p><a href="/contact/" class="underline">Contact</a> · <a href="/privacy-policy/" class="underline">Privacy</a></p>
+				<p class="sm:text-right">Demo project — fictional company.</p>
+			</div>
+		</footer>
+	</body>
+</html>

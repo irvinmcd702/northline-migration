@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://northline-demo-7x9.pages.dev/sitemap-index.xml

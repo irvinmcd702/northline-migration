@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { productCategories } from '../../lib/content';
+
+export function getStaticPaths() {
+	return productCategories.map((category) => ({ params: { category: category.slug }, props: { category } }));
+}
+
+const { category } = Astro.props;
+const products = await getCollection('products', (p) => p.data.category === category.slug);
+---
+
+<BaseLayout title={`${category.name} | Northline Industrial Supply`} description={category.description}>
+	<nav aria-label="Breadcrumb" class="text-sm text-ink/70"><a href="/products/" class="underline">Products</a></nav>
+	<h1 class="mt-2 text-3xl font-bold">{category.name}</h1>
+	<p class="mt-2 max-w-3xl text-ink/80">{category.description}</p>
+	<div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{products.map((p, i) => <Card level={2} href={p.data.oldUrl} title={p.data.title} text={p.data.excerpt} image={p.data.image} badge={p.data.sku} eager={i < 2} />)}
+	</div>
+</BaseLayout>

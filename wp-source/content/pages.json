@@ -1,0 +1,15 @@
+[
+  { "slug": "home", "title": "Home", "front": true,
+    "body": "<!-- wp:heading {\"level\":1} --><h1 class=\"wp-block-heading\">Pumps, compressors and valves that keep your plant running</h1><!-- /wp:heading --><p>Northline Industrial Supply sells, installs and services industrial equipment across the Pacific Northwest. Same-day quotes, stock on the shelf and technicians who answer the phone.</p><div class=\"wp-block-columns\"><div class=\"wp-block-column\"><h3>Products</h3><p>Over 2,000 pumps, compressors and valves in stock. <a href=\"/products/\">Browse the catalog</a>.</p></div><div class=\"wp-block-column\"><h3>Used equipment</h3><p>Refurbished and tested units with warranty. <a href=\"/inventory/\">See what's available</a>.</p></div><div class=\"wp-block-column\"><h3>Service</h3><p>Repairs, rentals and maintenance contracts. <a href=\"/services/\">Our services</a>.</p></div></div><p><a href=\"/request-a-quote/\">Request a quote</a></p>" },
+  { "slug": "about", "title": "About Us",
+    "body": "<p>Northline started in 1998 as a two-person pump repair shop in Spokane. Today we are a team of 34: sales engineers, workshop technicians and field service crews.</p><h2>Our workshop</h2><figure class=\"wp-block-gallery has-nested-images columns-3\">{{GALLERY:about}}</figure><p>Every pump and valve we refurbish goes through the same bench tests as a new one.</p>" },
+  { "slug": "services", "title": "Services",
+    "body": "<h2>Repair and refurbishment</h2><p>Pumps, compressors and valves of any brand, with a written test report.</p><h2>Rentals</h2><p>Dewatering pumps and diesel compressors by the day, week or month.</p><h2>Maintenance contracts</h2><p>Planned visits, oil analysis and priority call-outs.</p><h2>Energy audits</h2><p>Compressed-air and pumping system audits with measured savings.</p>" },
+  { "slug": "contact", "title": "Contact",
+    "body": "<p>Northline Industrial Supply<br>4120 E Trent Ave, Spokane, WA 99202 (fictional address)</p><p>Phone: (509) 555-0142<br>Email: sales@northline.example</p><p>Mon–Fri 7:00–17:00, emergency service 24/7.</p>" },
+  { "slug": "request-a-quote", "title": "Request a Quote",
+    "body": "<p>Tell us what you need and we will reply within one business day.</p><p>{{CF7}}</p>" },
+  { "slug": "privacy-policy", "title": "Privacy Policy",
+    "body": "<p>This is a demo site of a fictional company. Form submissions are used only to answer your request and are not stored on the website.</p>" },
+  { "slug": "blog", "title": "Blog", "posts_page": true, "body": "" }
+]

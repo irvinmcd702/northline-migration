@@ -1,0 +1,20 @@
+{
+  "categories": [
+    { "slug": "maintenance-tips", "name": "Maintenance Tips" },
+    { "slug": "company-news", "name": "Company News" }
+  ],
+  "posts": [
+    { "slug": "five-signs-your-pump-seal-is-failing", "title": "Five Signs Your Pump Seal Is Failing", "category": "maintenance-tips", "date": "2026-03-12",
+      "body": "<p>Seal failures rarely happen without warning. Here is what our service techs look for first.</p><ol><li>Drips that grow week by week</li><li>Crystals or residue around the gland</li><li>A squeal at start-up</li><li>Rising bearing temperature</li><li>Vibration after a dry run</li></ol><p>Catch any of these early and a seal kit is a one-hour job.</p>" },
+    { "slug": "how-to-size-an-air-compressor", "title": "How to Size an Air Compressor", "category": "maintenance-tips", "date": "2026-02-02",
+      "body": "<p>Add up the air consumption of every tool, apply a realistic duty factor and leave 20% headroom. Then check pressure: every extra bar costs about 7% more energy.</p>" },
+    { "slug": "why-we-test-every-relief-valve", "title": "Why We Test Every Relief Valve", "category": "maintenance-tips", "date": "2025-11-20",
+      "body": "<p>A relief valve is the last line of defence, so we never ship one untested. Watch how the bench test works:</p><figure class=\"wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube\"><div class=\"wp-block-embed__wrapper\">https://www.youtube.com/watch?v=northline-demo</div></figure>" },
+    { "slug": "winterizing-outdoor-pumps", "title": "Winterizing Outdoor Pumps", "category": "maintenance-tips", "date": "2025-10-08",
+      "body": "<p>Drain the casing, open the vent plugs and store mechanical seals wet. A frozen casing is the most expensive mistake we see every January.</p>" },
+    { "slug": "new-service-van-for-eastern-washington", "title": "A New Service Van for Eastern Washington", "category": "company-news", "date": "2026-04-01",
+      "body": "<p>Our second fully equipped van now covers Spokane and the Tri-Cities, cutting response times to under four hours.</p>" },
+    { "slug": "northline-celebrates-25-years", "title": "Northline Celebrates 25 Years", "category": "company-news", "date": "2023-09-15",
+      "body": "<p>From a two-person pump repair shop in 1998 to a team of 34. Thank you to every customer who called us at 2 a.m. and trusted us to fix it.</p>" }
+  ]
+}

@@ -1,0 +1,25 @@
+---
+// Plain WordPress pages: /about/, /services/, /contact/, /request-a-quote/, /privacy-policy/.
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { pageTitle } from '../lib/content';
+
+export async function getStaticPaths() {
+	const pages = await getCollection('pages', (p) => !['home', 'blog'].includes(p.id));
+	return pages.map((page) => ({ params: { slug: page.id }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+// The exporter replaced the WordPress Contact Form 7 form with this marker.
+const hasQuoteForm = page.body?.includes('<!-- form:quote -->');
+---
+
+<BaseLayout title={pageTitle(page)} description={page.data.description}>
+	<article class="prose max-w-3xl">
+		<h1>{page.data.title}</h1>
+		<Content />
+	</article>
+	{hasQuoteForm && <QuoteForm />}
+</BaseLayout>

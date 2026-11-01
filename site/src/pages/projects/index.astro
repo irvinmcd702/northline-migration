@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+---
+
+<BaseLayout title="Projects | Northline Industrial Supply" description="Pump, compressor and valve projects across the Pacific Northwest.">
+	<h1 class="text-3xl font-bold">Projects</h1>
+	<div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{projects.map((p, i) => (
+			<Card level={2} href={p.data.oldUrl} title={p.data.title} text={[p.data.clientType, p.data.location, p.data.year].filter(Boolean).join(' · ')} image={p.data.image} eager={i < 2} />
+		))}
+	</div>
+</BaseLayout>

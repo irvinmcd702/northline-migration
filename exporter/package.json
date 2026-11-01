@@ -1,0 +1,18 @@
+{
+  "name": "northline-exporter",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "wp-to-astro": "bin/export.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "he": "^2.0.0",
+    "turndown": "^7.2.4"
+  }
+}

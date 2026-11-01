@@ -1,0 +1,32 @@
+---
+import { getEntry, getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import { pageTitle, productCategories } from '../lib/content';
+
+const home = (await getEntry('pages', 'home'))!;
+const { Content } = await render(home);
+const products = await getCollection('products');
+const projects = (await getCollection('projects')).sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0)).slice(0, 3);
+const firstOf = (cat: string) => products.find((p) => p.data.category === cat);
+---
+
+<BaseLayout title={pageTitle(home)} description={home.data.description}>
+	<section class="prose max-w-none"><Content /></section>
+
+	<section class="mt-14" aria-labelledby="cats">
+		<h2 id="cats" class="text-2xl font-bold">Product range</h2>
+		<div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+			{productCategories.map((c, i) => (
+				<Card href={`/product-category/${c.slug}/`} title={c.name} text={c.description} image={firstOf(c.slug)?.data.image} eager={i < 2} />
+			))}
+		</div>
+	</section>
+
+	<section class="mt-14" aria-labelledby="work">
+		<h2 id="work" class="text-2xl font-bold">Recent projects</h2>
+		<div class="mt-5 grid gap-5 sm:grid-cols-3">
+			{projects.map((p) => <Card href={p.data.oldUrl} title={p.data.title} text={[p.data.clientType, p.data.location].filter(Boolean).join(' · ')} image={p.data.image} />)}
+		</div>
+	</section>
+</BaseLayout>

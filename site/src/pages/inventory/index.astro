@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { usd, statusLabel } from '../../lib/content';
+
+// Sold units stay listed (with their status) so buyers see what usually comes in.
+const order = { available: 0, reserved: 1, sold: 2 };
+const units = (await getCollection('inventory')).sort((a, b) => order[a.data.status] - order[b.data.status] || a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Used Equipment | Northline Industrial Supply" description="Refurbished and tested pumps, compressors and dryers with warranty.">
+	<h1 class="text-3xl font-bold">Used equipment</h1>
+	<p class="mt-2 max-w-3xl text-ink/80">Refurbished and bench-tested units with a written warranty.</p>
+	<div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{units.map((u, i) => (
+			<Card level={2} href={u.data.oldUrl} title={u.data.title} text={`${usd(u.data.price)} · ${u.data.condition ?? ''}`} image={u.data.image} badge={statusLabel[u.data.status]} eager={i < 2} />
+		))}
+	</div>
+</BaseLayout>

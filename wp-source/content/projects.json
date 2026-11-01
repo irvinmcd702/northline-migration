@@ -1,0 +1,16 @@
+[
+  { "slug": "brewery-cooling-water-upgrade", "title": "Brewery Cooling Water Upgrade", "client_type": "Craft brewery", "location": "Portland, OR", "year": 2025, "gallery": 3,
+    "body": "<p>The brewery's glycol and cooling-water pumps were oversized and ran on throttled valves. We replaced them with two IP-80 inline pumps on variable speed drives.</p><p><strong>Result:</strong> 41% lower pump energy in the first quarter and quieter cellar.</p>" },
+  { "slug": "municipal-valve-replacement-program", "title": "Municipal Valve Replacement Program", "client_type": "City water utility", "location": "Spokane, WA", "year": 2024, "gallery": 0,
+    "body": "<p>A three-year program to replace 140 seized gate valves across the distribution network. We supplied GV-100 and BF-150 valves in batches matched to the utility's dig schedule.</p>" },
+  { "slug": "compressed-air-audit-furniture-plant", "title": "Compressed Air Audit for a Furniture Plant", "client_type": "Furniture manufacturer", "location": "Boise, ID", "year": 2025, "gallery": 0,
+    "body": "<p>Leak survey, demand logging and a right-sized system: one VS-22 replaced two old piston compressors. Payback was 14 months.</p>" },
+  { "slug": "asphalt-plant-bitumen-pumps", "title": "Asphalt Plant Bitumen Pumps", "client_type": "Road construction", "location": "Billings, MT", "year": 2023, "gallery": 0,
+    "body": "<p>Two GT-350 °C jacketed gear pumps for bitumen transfer, with heat tracing on the suction lines. No cold-start failures since installation.</p>" },
+  { "slug": "dairy-cip-pump-skid", "title": "Dairy Clean-in-Place Pump Skid", "client_type": "Dairy cooperative", "location": "Twin Falls, ID", "year": 2024, "gallery": 0,
+    "body": "<p>A skid with LP-10 lobe pumps and a return pump for the cleaning circuit, built and pressure-tested in our workshop.</p>" },
+  { "slug": "water-treatment-dosing-retrofit", "title": "Water Treatment Dosing Retrofit", "client_type": "Industrial park", "location": "Tacoma, WA", "year": 2025, "gallery": 0,
+    "body": "<p>Eight DZ-1 dosing pumps replaced mechanical diaphragm units. Chemical use dropped 12% thanks to flow-paced dosing.</p>" },
+  { "slug": "mine-dewatering-rental-fleet", "title": "Mine Dewatering Rental Fleet", "client_type": "Mining contractor", "location": "Elko, NV", "year": 2023, "gallery": 0,
+    "body": "<p>Twelve SP-50 self-priming pumps on trailers, with a service contract and a 24-hour spare swap.</p>" }
+]

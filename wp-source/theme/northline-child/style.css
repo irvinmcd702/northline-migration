@@ -1,0 +1,11 @@
+/*
+Theme Name: Northline
+Template: twentytwentyfour
+Description: Child theme for the Northline Industrial Supply demo site.
+Version: 1.0.0
+*/
+
+.nl-demo-note {
+	font-size: 0.8rem;
+	opacity: 0.7;
+}

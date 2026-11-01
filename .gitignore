@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+.astro/
+wp-source/data/
+.wrangler/
+wp-source/content/media/

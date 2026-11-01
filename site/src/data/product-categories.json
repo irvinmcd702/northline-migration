@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "air-compressors",
+    "name": "Air Compressors",
+    "description": "Rotary screw and piston compressors with dryers and receivers."
+  },
+  {
+    "slug": "centrifugal-pumps",
+    "name": "Centrifugal Pumps",
+    "description": "End-suction, inline and multistage pumps for water, light chemicals and HVAC duty."
+  },
+  {
+    "slug": "industrial-valves",
+    "name": "Industrial Valves",
+    "description": "Ball, butterfly, gate and check valves, manual and actuated."
+  },
+  {
+    "slug": "positive-displacement-pumps",
+    "name": "Positive Displacement Pumps",
+    "description": "Gear, lobe and diaphragm pumps for viscous media, dosing and transfer."
+  }
+]

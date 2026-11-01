@@ -1,0 +1,16 @@
+[
+  { "slug": "used-screw-compressor-45-kw-2019", "title": "Used Screw Compressor 45 kW (2019)", "price": 14500, "status": "available", "condition": "Refurbished, 21,000 h",
+    "body": "<p>Removed from a packaging plant during an upgrade. New air end bearings, new oil separator and a 6-month warranty.</p>" },
+  { "slug": "used-centrifugal-pump-110-m3h", "title": "Used Centrifugal Pump 110 m³/h", "price": 3900, "status": "available", "condition": "Tested, new seal",
+    "body": "<p>Cast iron end-suction pump with a 22 kW motor. Performance-tested on our bench, curve available.</p>" },
+  { "slug": "ex-demo-dosing-skid", "title": "Ex-Demo Dosing Skid (2 × DZ-1)", "price": 2600, "status": "available", "condition": "Ex-demo, as new",
+    "body": "<p>Our trade-show skid: two DZ-1 pumps, a calibration column and a bunded tray. Never used on chemicals.</p>" },
+  { "slug": "used-refrigerated-dryer-8-m3min", "title": "Used Refrigerated Dryer 8 m³/min", "price": 1700, "status": "available", "condition": "Serviced",
+    "body": "<p>New condensate drain and refrigerant check. Ideal for a 45 kW compressor.</p>" },
+  { "slug": "used-lobe-pump-stainless", "title": "Used Stainless Lobe Pump", "price": 5200, "status": "reserved", "condition": "Refurbished",
+    "body": "<p>Hygienic lobe pump with new rotors and seals. Reserved pending payment.</p>" },
+  { "slug": "used-air-receiver-2000-l", "title": "Used Air Receiver 2,000 l", "price": 1100, "status": "reserved", "condition": "Inspected",
+    "body": "<p>Vertical galvanised receiver with a fresh inspection report and new safety valve.</p>" },
+  { "slug": "used-vsd-compressor-30-kw", "title": "Used VSD Compressor 30 kW", "price": 9800, "status": "sold", "condition": "Refurbished",
+    "body": "<p>Sold. Similar units arrive every few months, ask us to put you on the list.</p>" }
+]

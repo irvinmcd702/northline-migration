@@ -1,0 +1,49 @@
+name: northline-wp
+
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    depends_on: [db]
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - wp_data:/var/www/html
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./theme/northline-child:/var/www/html/wp-content/themes/northline-child:ro
+
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: [tools]
+    depends_on: [db, wordpress]
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      HOME: /tmp
+    volumes:
+      - wp_data:/var/www/html
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins:ro
+      - ./theme/northline-child:/var/www/html/wp-content/themes/northline-child:ro
+      - ./content:/content:ro
+      - ./import:/import:ro
+
+volumes:
+  db_data:
+  wp_data:

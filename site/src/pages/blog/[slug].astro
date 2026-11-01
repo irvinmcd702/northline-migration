@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pageTitle, blogCategory } from '../../lib/content';
+
+export async function getStaticPaths() {
+	return (await getCollection('posts')).map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { data } = post;
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+---
+
+<BaseLayout title={pageTitle(post)} description={data.description}>
+	<article class="max-w-3xl">
+		<nav aria-label="Breadcrumb" class="text-sm text-ink/70"><a href="/blog/" class="underline">Blog</a></nav>
+		<h1 class="mt-2 text-3xl font-bold">{data.title}</h1>
+		<p class="mt-2 text-sm text-ink/70"><time datetime={data.date.toISOString()}>{fmt.format(data.date)}</time>{blogCategory(data.category) && ` · ${blogCategory(data.category)!.name}`}</p>
+		{data.image && <Image src={data.image} alt="" widths={[640, 960]} sizes="(min-width: 800px) 768px, 100vw" class="mt-6 w-full rounded-xl" loading="eager" fetchpriority="high" />}
+		<div class="prose mt-8"><Content /></div>
+	</article>
+</BaseLayout>

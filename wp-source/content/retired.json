@@ -1,0 +1,8 @@
+[
+  { "slug": "old-catalog-2019", "title": "Catalog 2019", "redirect_to": "/products/",
+    "body": "<p>Our 2019 printed catalog. Prices and models on this page are out of date.</p>" },
+  { "slug": "spare-parts-order-form", "title": "Spare Parts Order Form", "redirect_to": "/request-a-quote/",
+    "body": "<p>Please use the quote form for spare parts orders.</p>" },
+  { "slug": "careers-2021", "title": "Careers 2021", "redirect_to": "/about/",
+    "body": "<p>We were hiring a field service technician in 2021. This position has been filled.</p>" }
+]

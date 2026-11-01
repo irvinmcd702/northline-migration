@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { productCategories } from '../../lib/content';
+
+const products = await getCollection('products');
+---
+
+<BaseLayout title="Products | Northline Industrial Supply" description="Pumps, compressors and industrial valves in stock in Spokane, WA.">
+	<h1 class="text-3xl font-bold">Products</h1>
+	{productCategories.map((c, i) => (
+		<section class="mt-10" aria-labelledby={c.slug}>
+			<h2 id={c.slug} class="text-xl font-bold"><a href={`/product-category/${c.slug}/`} class="hover:underline">{c.name}</a></h2>
+			<p class="mt-1 text-ink/80">{c.description}</p>
+			<div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				{products.filter((p) => p.data.category === c.slug).map((p, j) => (
+					<Card href={p.data.oldUrl} title={p.data.title} text={p.data.excerpt} image={p.data.image} badge={p.data.sku} eager={i === 0 && j < 2} />
+				))}
+			</div>
+		</section>
+	))}
+</BaseLayout>

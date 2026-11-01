@@ -1,0 +1,19 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { byDateDesc, blogCategory, pageTitle } from '../../lib/content';
+
+const blog = (await getEntry('pages', 'blog'))!;
+const posts = (await getCollection('posts')).sort(byDateDesc);
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+---
+
+<BaseLayout title={pageTitle(blog)} description="Maintenance tips and company news from Northline Industrial Supply.">
+	<h1 class="text-3xl font-bold">Blog</h1>
+	<div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{posts.map((p, i) => (
+			<Card level={2} href={p.data.oldUrl} title={p.data.title} text={fmt.format(p.data.date)} image={p.data.image} badge={blogCategory(p.data.category)?.name} eager={i < 2} />
+		))}
+	</div>
+</BaseLayout>
